@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>纷纷万事，直道而行</title>
 
   
   <meta name="author" content="John Doe">
@@ -19,14 +19,14 @@
 
   
 
-  <meta property="og:site_name" content="Hexo"/>
+  <meta property="og:site_name" content="纷纷万事，直道而行"/>
 
   
   <meta property="og:image" content="/favicon.ico"/>
   
 
   <link href="/favicon.ico" rel="icon">
-  <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="纷纷万事，直道而行" type="application/atom+xml">
   <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
 </head>
 
@@ -38,20 +38,20 @@
     <header>
   <div class="site-branding">
     <h1 class="site-title">
-      <a href="/">Hexo</a>
+      <a href="/">纷纷万事，直道而行</a>
     </h1>
     <p class="site-description"></p>
   </div>
   <nav class="site-navigation">
     <ul>
       
-        <li><a href="/">Home</a></li>
+        <li><a href="/">主页</a></li>
       
-        <li><a href="/archives">Archives</a></li>
+        <li><a href="/archives">归档</a></li>
       
-        <li><a href="/categories">Categories</a></li>
+        <li><a href="/categories">分类</a></li>
       
-        <li><a href="/tags">Tags</a></li>
+        <li><a href="/tags">标签</a></li>
       
     </ul>
   </nav>
@@ -63,15 +63,15 @@
 
   
     
-    <h3 class="article-title"><a href="/2017/09/26/hello-world/"><span>Hello World</span></a></h3>
+    <h3 class="article-title"><a href="/2017/07/09/layui笔记/"><span>layui笔记</span></a></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2017/09/26/hello-world/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-09-26T15:09:27.031Z">
-          2017-09-26
+      <a href="/2017/07/09/layui笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-09T12:02:09.000Z">
+          2017-07-09
         </time>
       </a>
     </span>
@@ -83,15 +83,147 @@
   <div class="article-content">
     <div class="entry">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+        <blockquote>
+<h4 id="layui-config的使用"><a href="#layui-config的使用" class="headerlink" title="layui.config的使用"></a>layui.config的使用</h4></blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">layui.config(&#123;</div><div class="line">  base:<span class="string">"../js/"</span>, <span class="comment">//此基础路径设置不会影响 layui原有模块的加载只会影响 extend扩展的模块 路径</span></div><div class="line">  timeout:<span class="number">10</span>    , <span class="comment">//模块加载超时10秒  代码里面会处理成毫秒</span></div><div class="line">  dir:<span class="string">"../html"</span>  <span class="comment">//layui.js所在文件夹路径   会用它来寻找 他下面的 ./lay/module文件夹 内置模- 块</span></div><div class="line">&#125;).extend(&#123;</div><div class="line">  vue:<span class="string">"vue"</span>   <span class="comment">//不需要加  .js</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//laydate  layer mobile 会用lay.addCss  加载模块的 样式</span></div><div class="line"><span class="comment">//需在layui addCss设置下一layui.js为基础的路径</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//layui form模块需改进</span></div><div class="line"><span class="comment">// 1 下拉框没有多选</span></div><div class="line"><span class="comment">// 2. error提示 不能自定义位置</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/07/09/layui笔记/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/07/04/Flex布局/"><span>Flex布局</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/04/Flex布局/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-04T06:58:11.000Z">
+          2017-07-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>参考<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰Flex布局</a><br>便于查询</p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.parent&#123; /*父容器盒子包含6个属性 一下展示为默认值*/</div><div class="line">   display:flex;</div><div class="line">   flex-direction:row ; </div><div class="line">   flex-wrap:nowrap;</div><div class="line">   flex-flow:row nowrap;</div><div class="line">   justify-content:flex-star|flex-end|space-between|space-around;</div><div class="line">  align-items:stretch（默认值）;/*如果项目未设置高度或设为auto，将占满整个容器的高度。*/</div><div class="line">  align-content:flex-star;</div><div class="line">&#125;</div><div class="line">.child&#123;</div><div class="line">  flex:0 1 auto;/*放大 缩小 宽度*/</div><div class="line">  order:0;</div><div class="line">  align-self:auto /*默认继承父元素的 align-items设置*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/07/04/Flex布局/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/07/04/正则匹配/"><span>正则匹配</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/04/正则匹配/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-04T04:17:40.000Z">
+          2017-07-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>仔细敲了啦一下正则以防忘记<br>主要解释 String的 search(),match(),relace(),split();<br>RegExp的test(),exec(),RegExp;</p>
+</blockquote>
+<h4 id="RegExp-1—RegExp-99"><a href="#RegExp-1—RegExp-99" class="headerlink" title="RegExp.$1—RegExp.$99"></a>RegExp.$1—RegExp.$99</h4><p>  在js中只要用到正则匹配且采用正则分组 <code>/($1)($2)/</code></p>
+<ol>
+<li>重置RegExp的$1–$99</li>
+<li><p>重新赋值上RegExp.$1–$99</p>
+<blockquote>
+<p>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法<br>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量<br>多会影响全局的<code>RegExp.$1--$99</code>的值  </p>
+</blockquote>
+<h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> str = <span class="string">"明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静"</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">testMatch</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//测试sting.match()函数</span></div><div class="line">      <span class="keyword">var</span> m = str.match(<span class="string">"([明静])(.&#123;1&#125;)"</span>);</div><div class="line">      log(m);                    </div><div class="line">      <span class="comment">// ["明明", "明", "明", index: 0, input: "明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静"]</span></div><div class="line"> &#125;</div><div class="line"> test2();</div><div class="line">log(<span class="string">"g"</span>,<span class="built_in">RegExp</span>.$<span class="number">1</span>,<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//明,明</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="详解string的4个正则方法"><a href="#详解string的4个正则方法" class="headerlink" title="详解string的4个正则方法"></a>详解string的4个正则方法</h5><h1 id="string-match-reg"><a href="#string-match-reg" class="headerlink" title="string.match(reg)"></a>string.match(reg)</h1><blockquote>
+<p>当reg没有设置全局标志g(什么鬼全局标志,只要记住g就是用来改变reg.lastIndex),<br>返回[“明明”, “明”, “明”, index: 0, input: “明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静”]<br>如果设拉全局标志则返回所有找到的值<br>没找到值 返回null</p>
+</blockquote>
+<h4 id="string-search-reg"><a href="#string-search-reg" class="headerlink" title="string.search(reg)"></a>string.search(reg)</h4><blockquote>
+<p>找到返回 下标<br>没找到 返回-1</p>
+</blockquote>
+<h4 id="string-repalce-“匹配值”-”替换值”"><a href="#string-repalce-“匹配值”-”替换值”" class="headerlink" title="string.repalce(“匹配值”,”替换值”)"></a>string.repalce(“匹配值”,”替换值”)</h4><blockquote>
+<p>需要注意的是替换之用 写在””内 如果是字符串加引号则需要 “”明明”” </p>
+</blockquote>
+<h5 id="RegExp的test"><a href="#RegExp的test" class="headerlink" title="RegExp的test()"></a>RegExp的test()</h5><blockquote>
+<p>返回 boolean值<br>如果设置 g 则会改变reg.lastIndex的值</p>
+</blockquote>
+<h5 id="RegExp的exec"><a href="#RegExp的exec" class="headerlink" title="RegExp的exec()"></a>RegExp的exec()</h5><blockquote>
+<p>与string.match()不设置全局返回一样 不同的是会处理reg.lastIndex   </p>
+</blockquote>
 
       
     </div>
@@ -112,7 +244,141 @@
       <span>
         <i class="icon-comments"></i>
         <span>
-          <a href="/2017/09/26/hello-world/#comment">Comments</a>
+          <a href="/2017/07/04/正则匹配/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/06/30/markdown语法/"><span>markdown语法</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/06/30/markdown语法/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-06-30T13:09:26.000Z">
+          2017-06-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="代码高亮"><a href="#代码高亮" class="headerlink" title="代码高亮"></a>代码高亮</h3><p>三个小撇号加高亮语言 再以小撇号结尾</p>
+<blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
+</blockquote>
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
+<h1 id="表示一级标题-依次递减"><a href="#表示一级标题-依次递减" class="headerlink" title="#表示一级标题 依次递减"></a>#表示一级标题 依次递减</h1><p>####### #######表示六级标题</p>
+</blockquote>
+<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><blockquote>
+<p><em>\</em>斜体*<em><br>**\</em>*粗体**<strong><br>*</strong>***粗斜体***<em>*</em></p>
+</blockquote>
+<h3 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h3><blockquote>
+<p>超链接    [链接名字](链接地址)<br>图片链接  \！[图片名字](图片链接地址)</p>
+</blockquote>
+<h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><blockquote>
+<p>---</p>
+</blockquote>
+<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
+<p>有序 在每段文字前加 *<br>无序  在每段文字前加 1</p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/06/30/markdown语法/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/06/30/javascript转换/"><span>javascript转换</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/06/30/javascript转换/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-06-30T12:34:57.000Z">
+          2017-06-30
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<h4 id="javascrpit中一些-特殊转换"><a href="#javascrpit中一些-特殊转换" class="headerlink" title="javascrpit中一些 特殊转换"></a>javascrpit中一些 特殊转换</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">1</span>+<span class="literal">null</span>   <span class="comment">// 1 null转换成0</span></div><div class="line"><span class="number">1</span>+[]    <span class="comment">// "1"  注意是字符串啦</span></div><div class="line"><span class="number">1</span>+[<span class="number">9</span>]    <span class="comment">//  "19"  字符</span></div></pre></td></tr></table></figure>
+<h4 id="这里就要了解-对象转原始值时的2个函数toString-与valueOf"><a href="#这里就要了解-对象转原始值时的2个函数toString-与valueOf" class="headerlink" title="这里就要了解  对象转原始值时的2个函数toString() 与valueOf()"></a>这里就要了解  对象转原始值时的2个函数toString() 与valueOf()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 对象参与运算时 回去 执行 obj.valueOf()方法拿到原始值  没有返回对象本身</span></div><div class="line"><span class="comment">// 如果返回的 不是个原始值  则会执行 obj.toString() </span></div><div class="line"><span class="comment">//这就可以解释 1+[9] 位 "19"</span></div><div class="line"></div><div class="line">[<span class="number">9</span>].valueOf()                    <span class="comment">//返回对象本身 执行toString</span></div><div class="line">[<span class="number">9</span>].toString()                   <span class="comment">//"9"</span></div><div class="line"><span class="number">1</span> + <span class="string">"9"</span>                          <span class="comment">//"19"</span></div></pre></td></tr></table></figure>
+<h4 id="我们自定义对象来验证"><a href="#我们自定义对象来验证" class="headerlink" title="我们自定义对象来验证"></a>我们自定义对象来验证</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj =&#123; </div><div class="line">    flag:<span class="literal">false</span>,</div><div class="line">    toString:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.flag?<span class="string">"先调用了valueOf"</span>:<span class="string">"直接调用哥们"</span> ;</div><div class="line">    &#125;,</div><div class="line">    valueOf:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.flag=<span class="literal">true</span>;</div><div class="line">      <span class="keyword">return</span>  [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>] ;       <span class="comment">//注意我返回的是一个 *数组对象* 不是原始值</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="number">1</span>+obj)                <span class="comment">//'1先调用了valueOf'</span></div><div class="line"></div><div class="line"><span class="comment">//我们再来总结一下 obj先调valueOf  如果不是原始值 则调toString</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">valueOf</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">12</span>;&#125;&#125;</div><div class="line">   </div><div class="line">   <span class="number">1</span>&lt;obj                           <span class="comment">//true</span></div></pre></td></tr></table></figure>
+<h4 id="js等效运算"><a href="#js等效运算" class="headerlink" title="js等效运算"></a>js等效运算</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">!!x                              <span class="comment">// 等价    Boolean(x)</span></div><div class="line">-x                               <span class="comment">// 等价    Number(x)</span></div><div class="line">x + <span class="string">""</span>                           <span class="comment">//等价     String(x)</span></div><div class="line">x!==x                            <span class="comment">// 等价    isNaN(x)</span></div></pre></td></tr></table></figure>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/06/30/javascript转换/#comment">评论</a>
         </span>
       </span>
     </div>

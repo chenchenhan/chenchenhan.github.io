@@ -1,0 +1,153 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>layui笔记 | 纷纷万事，直道而行</title>
+
+  
+  <meta name="author" content="John Doe">
+  
+
+  
+  <meta name="description" content="layui.config的使用
+123456789101112131415layui.config(&amp;#123;  base:&#34;../js/&#34;, //此基础路径设置不会影响 layui原有模块的加载只会影响 extend扩展的模块 路径  timeout:10    , //模块加载超时10秒  代">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="layui笔记"/>
+
+  <meta property="og:site_name" content="纷纷万事，直道而行"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="纷纷万事，直道而行" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">纷纷万事，直道而行</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>layui笔记</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/09/layui笔记/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-09T12:02:09.000Z">
+          2017-07-09
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<h4 id="layui-config的使用"><a href="#layui-config的使用" class="headerlink" title="layui.config的使用"></a>layui.config的使用</h4></blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">layui.config(&#123;</div><div class="line">  base:<span class="string">"../js/"</span>, <span class="comment">//此基础路径设置不会影响 layui原有模块的加载只会影响 extend扩展的模块 路径</span></div><div class="line">  timeout:<span class="number">10</span>    , <span class="comment">//模块加载超时10秒  代码里面会处理成毫秒</span></div><div class="line">  dir:<span class="string">"../html"</span>  <span class="comment">//layui.js所在文件夹路径   会用它来寻找 他下面的 ./lay/module文件夹 内置模- 块</span></div><div class="line">&#125;).extend(&#123;</div><div class="line">  vue:<span class="string">"vue"</span>   <span class="comment">//不需要加  .js</span></div><div class="line">&#125;);</div><div class="line"></div><div class="line"><span class="comment">//laydate  layer mobile 会用lay.addCss  加载模块的 样式</span></div><div class="line"><span class="comment">//需在layui addCss设置下一layui.js为基础的路径</span></div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">//layui form模块需改进</span></div><div class="line"><span class="comment">// 1 下拉框没有多选</span></div><div class="line"><span class="comment">// 2. error提示 不能自定义位置</span></div></pre></td></tr></table></figure>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/07/09/layui笔记/" data-title="layui笔记" data-url="http://yoursite.com/2017/07/09/layui笔记/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:""};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 John Doe
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>

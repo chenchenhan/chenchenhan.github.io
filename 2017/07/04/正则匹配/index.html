@@ -1,0 +1,182 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>正则匹配 | 纷纷万事，直道而行</title>
+
+  
+  <meta name="author" content="John Doe">
+  
+
+  
+  <meta name="description" content="仔细敲了啦一下正则以防忘记主要解释 String的 search(),match(),relace(),split();RegExp的test(),exec(),RegExp;
+
+RegExp.$1—RegExp.$99  在js中只要用到正则匹配且采用正则分组 /($1)($2)/
+
+重置RegE">
+  
+
+  
+  
+  <meta name="keywords" content="">
+  
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:title" content="正则匹配"/>
+
+  <meta property="og:site_name" content="纷纷万事，直道而行"/>
+
+  
+  <meta property="og:image" content="/favicon.ico"/>
+  
+
+  <link href="/favicon.ico" rel="icon">
+  <link rel="alternate" href="/atom.xml" title="纷纷万事，直道而行" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+</head>
+
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="/">纷纷万事，直道而行</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="/">主页</a></li>
+      
+        <li><a href="/archives">归档</a></li>
+      
+        <li><a href="/categories">分类</a></li>
+      
+        <li><a href="/tags">标签</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+    <main class="site-main posts-loop">
+    <article>
+
+  
+    
+    <h3 class="article-title"><span>正则匹配</span></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/04/正则匹配/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-04T04:17:40.000Z">
+          2017-07-04
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p>仔细敲了啦一下正则以防忘记<br>主要解释 String的 search(),match(),relace(),split();<br>RegExp的test(),exec(),RegExp;</p>
+</blockquote>
+<h4 id="RegExp-1—RegExp-99"><a href="#RegExp-1—RegExp-99" class="headerlink" title="RegExp.$1—RegExp.$99"></a>RegExp.$1—RegExp.$99</h4><p>  在js中只要用到正则匹配且采用正则分组 <code>/($1)($2)/</code></p>
+<ol>
+<li>重置RegExp的$1–$99</li>
+<li><p>重新赋值上RegExp.$1–$99</p>
+<blockquote>
+<p>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法<br>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量<br>多会影响全局的<code>RegExp.$1--$99</code>的值  </p>
+</blockquote>
+<h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> str = <span class="string">"明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静"</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">testMatch</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//测试sting.match()函数</span></div><div class="line">      <span class="keyword">var</span> m = str.match(<span class="string">"([明静])(.&#123;1&#125;)"</span>);</div><div class="line">      log(m);                    </div><div class="line">      <span class="comment">// ["明明", "明", "明", index: 0, input: "明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静"]</span></div><div class="line"> &#125;</div><div class="line"> test2();</div><div class="line">log(<span class="string">"g"</span>,<span class="built_in">RegExp</span>.$<span class="number">1</span>,<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//明,明</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h5 id="详解string的4个正则方法"><a href="#详解string的4个正则方法" class="headerlink" title="详解string的4个正则方法"></a>详解string的4个正则方法</h5><h1 id="string-match-reg"><a href="#string-match-reg" class="headerlink" title="string.match(reg)"></a>string.match(reg)</h1><blockquote>
+<p>当reg没有设置全局标志g(什么鬼全局标志,只要记住g就是用来改变reg.lastIndex),<br>返回[“明明”, “明”, “明”, index: 0, input: “明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静”]<br>如果设拉全局标志则返回所有找到的值<br>没找到值 返回null</p>
+</blockquote>
+<h4 id="string-search-reg"><a href="#string-search-reg" class="headerlink" title="string.search(reg)"></a>string.search(reg)</h4><blockquote>
+<p>找到返回 下标<br>没找到 返回-1</p>
+</blockquote>
+<h4 id="string-repalce-“匹配值”-”替换值”"><a href="#string-repalce-“匹配值”-”替换值”" class="headerlink" title="string.repalce(“匹配值”,”替换值”)"></a>string.repalce(“匹配值”,”替换值”)</h4><blockquote>
+<p>需要注意的是替换之用 写在””内 如果是字符串加引号则需要 “”明明”” </p>
+</blockquote>
+<h5 id="RegExp的test"><a href="#RegExp的test" class="headerlink" title="RegExp的test()"></a>RegExp的test()</h5><blockquote>
+<p>返回 boolean值<br>如果设置 g 则会改变reg.lastIndex的值</p>
+</blockquote>
+<h5 id="RegExp的exec"><a href="#RegExp的exec" class="headerlink" title="RegExp的exec()"></a>RegExp的exec()</h5><blockquote>
+<p>与string.match()不设置全局返回一样 不同的是会处理reg.lastIndex   </p>
+</blockquote>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+  </div>
+</article>
+
+  
+	<div id="comment">
+		
+	<!-- 多说评论框 start -->
+	 <div class="ds-thread" data-thread-key="/2017/07/04/正则匹配/" data-title="正则匹配" data-url="http://yoursite.com/2017/07/04/正则匹配/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:""};
+	  (function() {
+	    var ds = document.createElement('script');
+	    ds.type = 'text/javascript';ds.async = true;
+	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+	    ds.charset = 'UTF-8';
+	    (document.getElementsByTagName('head')[0]
+	     || document.getElementsByTagName('body')[0]).appendChild(ds);
+	  })();
+	  </script>
+	<!-- 多说公共JS代码 end -->
+
+	</div>
+
+
+
+
+    </main>
+
+    <footer class="site-footer">
+  <p class="site-info">
+    Proudly powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and
+    Theme by <a href="https://github.com/CodeDaraW/Hacker" target="_blank">Hacker</a>
+    </br>
+    
+    &copy; 2017 John Doe
+    
+  </p>
+</footer>
+    
+  </div>
+</div>
+</body>
+</html>
