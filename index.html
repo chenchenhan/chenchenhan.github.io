@@ -63,6 +63,140 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/09/27/seajs路径问题/"><span></span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/27/seajs路径问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-27T12:21:29.730Z">
+          2017-09-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <h3 id="年号世界"><a href="#年号世界" class="headerlink" title="年号世界"></a>年号世界</h3>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/27/seajs路径问题/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
+    <h3 class="article-title"><a href="/2017/09/27/vue生产优化/"><span>vue优化</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/09/27/vue生产优化/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-09-27T04:17:40.000Z">
+          2017-09-27
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<h4 id="vue去除源码map"><a href="#vue去除源码map" class="headerlink" title="vue去除源码map"></a>vue去除源码map</h4></blockquote>
+<ul>
+<li>解决问题: 通过vue-cli 把dist文件 放到服务器时，你希望别人访问时不能查看你的源码? <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//在根目录找到 =&gt; config文件夹 =&gt; index.js设置参数</span></div><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">       <span class="comment">//...</span></div><div class="line">       build:&#123;</div><div class="line">       productionSourceMap: <span class="literal">false</span>,</div><div class="line">       &#125;</div><div class="line">       <span class="comment">//...</span></div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<h4 id="vue异步加载"><a href="#vue异步加载" class="headerlink" title="vue异步加载"></a>vue异步加载</h4></blockquote>
+<ul>
+<li>解决问题: 在执行 <strong>npm run build</strong> 后压缩文件js文件过大?  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过异步加载方式 </span></div><div class="line">减少初次请求时间</div><div class="line"><span class="comment">//这种方式 vue-router 会在使用到组件时加载</span></div><div class="line"><span class="built_in">module</span>.exports = <span class="function"><span class="params">file</span> =&gt;</span> () =&gt; <span class="keyword">import</span>(<span class="string">'@/views/'</span> + file + <span class="string">'.vue'</span>)</div></pre></td></tr></table></figure>
+</li>
+</ul>
+
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/js/">js</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/vue/">vue</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/09/27/vue生产优化/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/09/26/vscode插件/"><span>vscode插件</span></a></h3>
     
   
@@ -84,8 +218,7 @@
     <div class="entry">
       
         <blockquote>
-<p>####markdown插件</p>
-</blockquote>
+<h4 id="markdown插件"><a href="#markdown插件" class="headerlink" title="markdown插件"></a>markdown插件</h4></blockquote>
 <p>在vscode中安装EverMonkey，Auto-Open ，Markdown Preview。</p>
 
       
@@ -96,6 +229,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/编辑器/">编辑器</a>
+    </span>
     
 
     
@@ -160,6 +300,13 @@
     <div class="article-meta pull-left">
 
     
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/js/">js</a>
+    </span>
+    
 
     
 
@@ -216,6 +363,13 @@
   <div class="article-footer">
     <div class="article-meta pull-left">
 
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/css/">css</a>
+    </span>
     
 
     
