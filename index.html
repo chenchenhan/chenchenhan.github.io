@@ -426,24 +426,6 @@
 <p>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法<br>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量<br>多会影响全局的<code>RegExp.$1--$99</code>的值  </p>
 </blockquote>
 <h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> str = <span class="string">"明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静"</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">testMatch</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//测试sting.match()函数</span></div><div class="line">      <span class="keyword">var</span> m = str.match(<span class="string">"([明静])(.&#123;1&#125;)"</span>);</div><div class="line">      log(m);                    </div><div class="line">      <span class="comment">// ["明明", "明", "明", index: 0, input: "明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静"]</span></div><div class="line"> &#125;</div><div class="line"> test2();</div><div class="line">log(<span class="string">"g"</span>,<span class="built_in">RegExp</span>.$<span class="number">1</span>,<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//明,明</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h5 id="详解string的4个正则方法"><a href="#详解string的4个正则方法" class="headerlink" title="详解string的4个正则方法"></a>详解string的4个正则方法</h5><h1 id="string-match-reg"><a href="#string-match-reg" class="headerlink" title="string.match(reg)"></a>string.match(reg)</h1><blockquote>
-<p>当reg没有设置全局标志g(什么鬼全局标志,只要记住g就是用来改变reg.lastIndex),<br>返回[“明明”, “明”, “明”, index: 0, input: “明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静”]<br>如果设拉全局标志则返回所有找到的值<br>没找到值 返回null</p>
-</blockquote>
-<h4 id="string-search-reg"><a href="#string-search-reg" class="headerlink" title="string.search(reg)"></a>string.search(reg)</h4><blockquote>
-<p>找到返回 下标<br>没找到 返回-1</p>
-</blockquote>
-<h4 id="string-repalce-“匹配值”-”替换值”"><a href="#string-repalce-“匹配值”-”替换值”" class="headerlink" title="string.repalce(“匹配值”,”替换值”)"></a>string.repalce(“匹配值”,”替换值”)</h4><blockquote>
-<p>需要注意的是替换之用 写在””内 如果是字符串加引号则需要 “”明明”” </p>
-</blockquote>
-<h5 id="RegExp的test"><a href="#RegExp的test" class="headerlink" title="RegExp的test()"></a>RegExp的test()</h5><blockquote>
-<p>返回 boolean值<br>如果设置 g 则会改变reg.lastIndex的值</p>
-</blockquote>
-<h5 id="RegExp的exec"><a href="#RegExp的exec" class="headerlink" title="RegExp的exec()"></a>RegExp的exec()</h5><blockquote>
-<p>与string.match()不设置全局返回一样 不同的是会处理reg.lastIndex   </p>
-</blockquote>
-
       
     </div>
 
@@ -509,21 +491,7 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
-<h1 id="表示一级标题-依次递减"><a href="#表示一级标题-依次递减" class="headerlink" title="#表示一级标题 依次递减"></a>#表示一级标题 依次递减</h1><p>####### #######表示六级标题</p>
-</blockquote>
-<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><blockquote>
-<p><em>\</em>斜体*<em><br>**\</em>*粗体**<strong><br>*</strong>***粗斜体***<em>*</em></p>
-</blockquote>
-<h3 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h3><blockquote>
-<p>超链接    [链接名字](链接地址)<br>图片链接  \！[图片名字](图片链接地址)</p>
-</blockquote>
-<h3 id="分隔符"><a href="#分隔符" class="headerlink" title="分隔符"></a>分隔符</h3><blockquote>
-<p>---</p>
-</blockquote>
-<h3 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h3><blockquote>
-<p>有序 在每段文字前加 *<br>无序  在每段文字前加 1</p>
-</blockquote>
-
+<h1 id="表示一级标题-依次递减"><a href="#表示一级标题-依次递减" class="headerlink" title="#表示一级标题 依次递减"></a>#表示一级标题 依次递减</h1><p>####### #######表示六级标题<br>
       
     </div>
 
@@ -580,11 +548,7 @@
         <blockquote>
 <h4 id="javascrpit中一些-特殊转换"><a href="#javascrpit中一些-特殊转换" class="headerlink" title="javascrpit中一些 特殊转换"></a>javascrpit中一些 特殊转换</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"><span class="number">1</span>+<span class="literal">null</span>   <span class="comment">// 1 null转换成0</span></div><div class="line"><span class="number">1</span>+[]    <span class="comment">// "1"  注意是字符串啦</span></div><div class="line"><span class="number">1</span>+[<span class="number">9</span>]    <span class="comment">//  "19"  字符</span></div></pre></td></tr></table></figure>
 <h4 id="这里就要了解-对象转原始值时的2个函数toString-与valueOf"><a href="#这里就要了解-对象转原始值时的2个函数toString-与valueOf" class="headerlink" title="这里就要了解  对象转原始值时的2个函数toString() 与valueOf()"></a>这里就要了解  对象转原始值时的2个函数toString() 与valueOf()</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 对象参与运算时 回去 执行 obj.valueOf()方法拿到原始值  没有返回对象本身</span></div><div class="line"><span class="comment">// 如果返回的 不是个原始值  则会执行 obj.toString() </span></div><div class="line"><span class="comment">//这就可以解释 1+[9] 位 "19"</span></div><div class="line"></div><div class="line">[<span class="number">9</span>].valueOf()                    <span class="comment">//返回对象本身 执行toString</span></div><div class="line">[<span class="number">9</span>].toString()                   <span class="comment">//"9"</span></div><div class="line"><span class="number">1</span> + <span class="string">"9"</span>                          <span class="comment">//"19"</span></div></pre></td></tr></table></figure>
-<h4 id="我们自定义对象来验证"><a href="#我们自定义对象来验证" class="headerlink" title="我们自定义对象来验证"></a>我们自定义对象来验证</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj =&#123; </div><div class="line">    flag:<span class="literal">false</span>,</div><div class="line">    toString:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     <span class="keyword">return</span> <span class="keyword">this</span>.flag?<span class="string">"先调用了valueOf"</span>:<span class="string">"直接调用哥们"</span> ;</div><div class="line">    &#125;,</div><div class="line">    valueOf:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">      <span class="keyword">this</span>.flag=<span class="literal">true</span>;</div><div class="line">      <span class="keyword">return</span>  [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>] ;       <span class="comment">//注意我返回的是一个 *数组对象* 不是原始值</span></div><div class="line">    &#125;</div><div class="line"></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="built_in">console</span>.log(<span class="number">1</span>+obj)                <span class="comment">//'1先调用了valueOf'</span></div><div class="line"></div><div class="line"><span class="comment">//我们再来总结一下 obj先调valueOf  如果不是原始值 则调toString</span></div><div class="line"></div><div class="line"><span class="keyword">var</span> obj=&#123;<span class="attr">valueOf</span>:<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;<span class="keyword">return</span> <span class="number">12</span>;&#125;&#125;</div><div class="line">   </div><div class="line">   <span class="number">1</span>&lt;obj                           <span class="comment">//true</span></div></pre></td></tr></table></figure>
-<h4 id="js等效运算"><a href="#js等效运算" class="headerlink" title="js等效运算"></a>js等效运算</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">!!x                              <span class="comment">// 等价    Boolean(x)</span></div><div class="line">-x                               <span class="comment">// 等价    Number(x)</span></div><div class="line">x + <span class="string">""</span>                           <span class="comment">//等价     String(x)</span></div><div class="line">x!==x                            <span class="comment">// 等价    isNaN(x)</span></div></pre></td></tr></table></figure>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-
       
     </div>
 

@@ -15,13 +15,7 @@
 12&amp;gt;&amp;gt;
 
 标题
-#表示一级标题 依次递减####### #######表示六级标题
-
-粗体和斜体
-\斜体***\*粗体******粗斜体****
-
-链接与图片
-超链接    [链接名字](链接地址)图片链接  \！[图片名字](图片链接地">
+#表示一级标题 依次递减####### #######表示六级标题">
   
 
   
@@ -103,10 +97,8 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&gt;</div><div class="line">&gt;</div></pre></td></tr></table></figure>
 </blockquote>
 <h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><blockquote>
-<h1 id="表示一级标题-依次递减"><a href="#表示一级标题-依次递减" class="headerlink" title="#表示一级标题 依次递减"></a>#表示一级标题 依次递减</h1><p>####### #######表示六级标题</p>
-</blockquote>
-<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><blockquote>
-<p><em>\</em>斜体*<em><br>**\</em>*粗体**<strong><br>*</strong>***粗斜体***<em>*</em></p>
+<h1 id="表示一级标题-依次递减"><a href="#表示一级标题-依次递减" class="headerlink" title="#表示一级标题 依次递减"></a>#表示一级标题 依次递减</h1><p>####### #######表示六级标题<br><a id="more"></a></p>
+<h3 id="粗体和斜体"><a href="#粗体和斜体" class="headerlink" title="粗体和斜体"></a>粗体和斜体</h3><p><em>\</em>斜体*<em><br>**\</em>*粗体**<strong><br>*</strong>***粗斜体***<em>*</em></p>
 </blockquote>
 <h3 id="链接与图片"><a href="#链接与图片" class="headerlink" title="链接与图片"></a>链接与图片</h3><blockquote>
 <p>超链接    [链接名字](链接地址)<br>图片链接  \！[图片名字](图片链接地址)</p>
@@ -137,26 +129,30 @@
 </article>
 
   
-	<div id="comment">
-		
-	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2017/06/30/markdown语法/" data-title="markdown语法" data-url="http://yoursite.com/2017/06/30/markdown语法/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:""};
-	  (function() {
-	    var ds = document.createElement('script');
-	    ds.type = 'text/javascript';ds.async = true;
-	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	    ds.charset = 'UTF-8';
-	    (document.getElementsByTagName('head')[0]
-	     || document.getElementsByTagName('body')[0]).appendChild(ds);
-	  })();
-	  </script>
-	<!-- 多说公共JS代码 end -->
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
 
-	</div>
+	<script type="text/javascript">
+	var disqus_shortname = '';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
 
 
 

@@ -14,7 +14,12 @@
 
 RegExp.$1—RegExp.$99  在js中只要用到正则匹配且采用正则分组 /($1)($2)/
 
-重置RegE">
+重置RegExp的$1–$99
+重新赋值上RegExp.$1–$99
+
+也就是说 string.match(&amp;quot;($1)($2)($3)&amp;quot;),string.search()...上述四个字符串方法以及new RegExp()对象，和 reg=/($1)($2)($3)/正则直接量多会影响全局的RegExp.$1--$99的值  
+
+如下12345678 var str = &#34;明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静&#34;; function testMatch()&amp;#123;           //测试sting.match()函数      var m = str.match(&#34;([明静])(.&amp;#123;1&amp;#125;)&#34;);      log(m);                          // [&#34;明明&#34;, &#34;明&#34;, &#34;明&#34;, index: 0, input: &#34;明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静&#34;] &amp;#125; test2();log(&#34;g&#34;,RegExp.$1,RegExp.$2); //明,明">
   
 
   
@@ -102,8 +107,7 @@ RegExp.$1—RegExp.$99  在js中只要用到正则匹配且采用正则分组 /(
 <p>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法<br>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量<br>多会影响全局的<code>RegExp.$1--$99</code>的值  </p>
 </blockquote>
 <h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> str = <span class="string">"明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静"</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">testMatch</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//测试sting.match()函数</span></div><div class="line">      <span class="keyword">var</span> m = str.match(<span class="string">"([明静])(.&#123;1&#125;)"</span>);</div><div class="line">      log(m);                    </div><div class="line">      <span class="comment">// ["明明", "明", "明", index: 0, input: "明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静"]</span></div><div class="line"> &#125;</div><div class="line"> test2();</div><div class="line">log(<span class="string">"g"</span>,<span class="built_in">RegExp</span>.$<span class="number">1</span>,<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//明,明</span></div></pre></td></tr></table></figure>
-</li>
-</ol>
+<a id="more"></a>
 <h5 id="详解string的4个正则方法"><a href="#详解string的4个正则方法" class="headerlink" title="详解string的4个正则方法"></a>详解string的4个正则方法</h5><h1 id="string-match-reg"><a href="#string-match-reg" class="headerlink" title="string.match(reg)"></a>string.match(reg)</h1><blockquote>
 <p>当reg没有设置全局标志g(什么鬼全局标志,只要记住g就是用来改变reg.lastIndex),<br>返回[“明明”, “明”, “明”, index: 0, input: “明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静”]<br>如果设拉全局标志则返回所有找到的值<br>没找到值 返回null</p>
 </blockquote>
@@ -113,6 +117,8 @@ RegExp.$1—RegExp.$99  在js中只要用到正则匹配且采用正则分组 /(
 <h4 id="string-repalce-“匹配值”-”替换值”"><a href="#string-repalce-“匹配值”-”替换值”" class="headerlink" title="string.repalce(“匹配值”,”替换值”)"></a>string.repalce(“匹配值”,”替换值”)</h4><blockquote>
 <p>需要注意的是替换之用 写在””内 如果是字符串加引号则需要 “”明明”” </p>
 </blockquote>
+</li>
+</ol>
 <h5 id="RegExp的test"><a href="#RegExp的test" class="headerlink" title="RegExp的test()"></a>RegExp的test()</h5><blockquote>
 <p>返回 boolean值<br>如果设置 g 则会改变reg.lastIndex的值</p>
 </blockquote>
@@ -146,26 +152,30 @@ RegExp.$1—RegExp.$99  在js中只要用到正则匹配且采用正则分组 /(
 </article>
 
   
-	<div id="comment">
-		
-	<!-- 多说评论框 start -->
-	 <div class="ds-thread" data-thread-key="/2017/07/04/正则匹配/" data-title="正则匹配" data-url="http://yoursite.com/2017/07/04/正则匹配/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:""};
-	  (function() {
-	    var ds = document.createElement('script');
-	    ds.type = 'text/javascript';ds.async = true;
-	    ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-	    ds.charset = 'UTF-8';
-	    (document.getElementsByTagName('head')[0]
-	     || document.getElementsByTagName('body')[0]).appendChild(ds);
-	  })();
-	  </script>
-	<!-- 多说公共JS代码 end -->
+	<section id="comments" class="comment">
+	  <div id="disqus_thread">
+	  <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+	  </div>
+	</section>
 
-	</div>
+	<script type="text/javascript">
+	var disqus_shortname = '';
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	(function(){
+	  var dsq = document.createElement('script');
+	  dsq.type = 'text/javascript';
+	  dsq.async = true;
+	  dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+	  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+	}());
+	</script>
+
 
 
 
