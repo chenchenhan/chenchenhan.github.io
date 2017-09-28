@@ -3,28 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Flex布局 | 纷纷万事，直道而行</title>
+  <title>seajs路径 | 纷纷万事，直道而行</title>
 
   
   <meta name="author" content="John Doe">
   
 
   
-  <meta name="description" content="参考阮一峰Flex布局
+  <meta name="description" content="关于seajs路径问题
 
-1234567891011121314.parent&amp;#123; /*父容器盒子包含6个属性 一下展示为默认值*/   display:flex;   flex-direction:row ;    flex-wrap:nowrap;   flex-flow:row now">
+seajs路径屌丝我认为分2部分
+ 1.不采用打包工具路径设置 2.采用工具打包压缩 路径设置">
   
 
   
   
-  <meta name="keywords" content="">
+  <meta name="keywords" content="js">
   
 
   <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <meta property="og:title" content="Flex布局"/>
+  <meta property="og:title" content="seajs路径"/>
 
   <meta property="og:site_name" content="纷纷万事，直道而行"/>
 
@@ -69,15 +70,15 @@
 
   
     
-    <h3 class="article-title"><span>Flex布局</span></h3>
+    <h3 class="article-title"><span>seajs路径</span></h3>
     
   
 
   <div class="article-top-meta">
     <span class="posted-on">
-      <a href="/2017/07/04/Flex布局/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-07-04T06:58:11.000Z">
-          2017-07-04
+      <a href="/2017/07/09/seajs路径问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-09T12:02:09.000Z">
+          2017-07-09
         </time>
       </a>
     </span>
@@ -90,9 +91,17 @@
     <div class="entry">
       
         <blockquote>
-<p>参考<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰Flex布局</a></p>
+<p> 关于seajs路径问题</p>
 </blockquote>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.parent&#123; /*父容器盒子包含6个属性 一下展示为默认值*/</div><div class="line">   display:flex;</div><div class="line">   flex-direction:row ; </div><div class="line">   flex-wrap:nowrap;</div><div class="line">   flex-flow:row nowrap;</div><div class="line">   justify-content:flex-star|flex-end|space-between|space-around;</div><div class="line">  align-items:stretch（默认值）;/*如果项目未设置高度或设为auto，将占满整个容器的高度。*/</div><div class="line">  align-content:flex-star;</div><div class="line">&#125;</div><div class="line">.child&#123;</div><div class="line">  flex:0 1 auto;/*放大 缩小 宽度*/</div><div class="line">  order:0;</div><div class="line">  align-self:auto /*默认继承父元素的 align-items设置*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>seajs路径屌丝我认为分2部分</p>
+<p> 1.不采用打包工具路径设置<br> 2.采用工具打包压缩 路径设置<br><a id="more"></a></p>
+<h4 id="第一种"><a href="#第一种" class="headerlink" title="第一种"></a>第一种</h4><p>  <code>seajs.use(/* 这里的路径一定是以引用sea.js的html文件 所在目录里面为基础*/)</code><br>  <code>require(/* ./ 采用相对路径是以当期 模块js 问路径基础*/)</code><br>    *不设置 base 参数时<br>  <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">seajs.config(&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">     <span class="comment">//base:''</span></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//此时 别名路径 =&gt; 是以 sea.js 所在目录为基础 </span></div><div class="line"><span class="comment">//</span></div></pre></td></tr></table></figure></p>
+<ul>
+<li><p>设置 base 参数时</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">seajs.config(&#123;</div><div class="line">  <span class="comment">//...</span></div><div class="line">  base:<span class="string">'../js'</span></div><div class="line">  <span class="comment">//...</span></div><div class="line">&#125;)</div><div class="line"></div><div class="line"><span class="comment">//此时 别名路径 =&gt; 是以引用sea.js的html文件 所在目录里面为基础</span></div></pre></td></tr></table></figure>
+<h3 id="第二种"><a href="#第二种" class="headerlink" title="第二种"></a>第二种</h3></li>
+</ul>
+
       
     </div>
 
@@ -106,10 +115,17 @@
 
     <span class="post-categories">
       <i class="icon-categories"></i>
-        <a href="/categories/css/">css</a>
+        <a href="/categories/js/">js</a>
     </span>
     
 
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/js/">js</a>
+    </span>
     
 
     </div>

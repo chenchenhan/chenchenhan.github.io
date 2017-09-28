@@ -63,60 +63,6 @@
 
   
     
-    <h3 class="article-title"><a href="/2017/09/27/seajs路径问题/"><span></span></a></h3>
-    
-  
-
-  <div class="article-top-meta">
-    <span class="posted-on">
-      <a href="/2017/09/27/seajs路径问题/" rel="bookmark">
-        <time class="entry-date published" datetime="2017-09-27T12:21:29.730Z">
-          2017-09-27
-        </time>
-      </a>
-    </span>
-  </div>
-
-
-  
-
-  <div class="article-content">
-    <div class="entry">
-      
-        <h3 id="年号世界"><a href="#年号世界" class="headerlink" title="年号世界"></a>年号世界</h3>
-      
-    </div>
-
-  </div>
-
-  <div class="article-footer">
-    <div class="article-meta pull-left">
-
-    
-
-    
-
-    </div>
-
-    
-    <div class="article-meta pull-right">
-      <span>
-        <i class="icon-comments"></i>
-        <span>
-          <a href="/2017/09/27/seajs路径问题/#comment">评论</a>
-        </span>
-      </span>
-    </div>
-    
-  </div>
-</article>
-
-
-
-  <article>
-
-  
-    
     <h3 class="article-title"><a href="/2017/09/27/vue生产优化/"><span>vue优化</span></a></h3>
     
   
@@ -331,6 +277,78 @@
 
   
     
+    <h3 class="article-title"><a href="/2017/07/09/seajs路径问题/"><span>seajs路径</span></a></h3>
+    
+  
+
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="/2017/07/09/seajs路径问题/" rel="bookmark">
+        <time class="entry-date published" datetime="2017-07-09T12:02:09.000Z">
+          2017-07-09
+        </time>
+      </a>
+    </span>
+  </div>
+
+
+  
+
+  <div class="article-content">
+    <div class="entry">
+      
+        <blockquote>
+<p> 关于seajs路径问题</p>
+</blockquote>
+<p>seajs路径屌丝我认为分2部分</p>
+<p> 1.不采用打包工具路径设置<br> 2.采用工具打包压缩 路径设置<br>
+      
+    </div>
+
+  </div>
+
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+
+    
+      
+
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="/categories/js/">js</a>
+    </span>
+    
+
+    
+    
+
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="/tags/js/">js</a>
+    </span>
+    
+
+    </div>
+
+    
+    <div class="article-meta pull-right">
+      <span>
+        <i class="icon-comments"></i>
+        <span>
+          <a href="/2017/07/09/seajs路径问题/#comment">评论</a>
+        </span>
+      </span>
+    </div>
+    
+  </div>
+</article>
+
+
+
+  <article>
+
+  
+    
     <h3 class="article-title"><a href="/2017/07/04/Flex布局/"><span>Flex布局</span></a></h3>
     
   
@@ -352,7 +370,7 @@
     <div class="entry">
       
         <blockquote>
-<p>参考<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰Flex布局</a><br>便于查询</p>
+<p>参考<a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="external">阮一峰Flex布局</a></p>
 </blockquote>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">.parent&#123; /*父容器盒子包含6个属性 一下展示为默认值*/</div><div class="line">   display:flex;</div><div class="line">   flex-direction:row ; </div><div class="line">   flex-wrap:nowrap;</div><div class="line">   flex-flow:row nowrap;</div><div class="line">   justify-content:flex-star|flex-end|space-between|space-around;</div><div class="line">  align-items:stretch（默认值）;/*如果项目未设置高度或设为auto，将占满整个容器的高度。*/</div><div class="line">  align-content:flex-star;</div><div class="line">&#125;</div><div class="line">.child&#123;</div><div class="line">  flex:0 1 auto;/*放大 缩小 宽度*/</div><div class="line">  order:0;</div><div class="line">  align-self:auto /*默认继承父元素的 align-items设置*/</div><div class="line">&#125;</div></pre></td></tr></table></figure>
       
@@ -416,16 +434,20 @@
     <div class="entry">
       
         <blockquote>
-<p>仔细敲了啦一下正则以防忘记<br>主要解释 String的 search(),match(),relace(),split();<br>RegExp的test(),exec(),RegExp;</p>
+<p>仔细敲了啦一下正则以防忘记</p>
 </blockquote>
+<ul>
+<li>主要解释 String的 search(),match(),relace(),split();</li>
+<li>RegExp的test(),exec(),RegExp;</li>
+</ul>
 <h4 id="RegExp-1—RegExp-99"><a href="#RegExp-1—RegExp-99" class="headerlink" title="RegExp.$1—RegExp.$99"></a>RegExp.$1—RegExp.$99</h4><p>  在js中只要用到正则匹配且采用正则分组 <code>/($1)($2)/</code></p>
 <ol>
 <li>重置RegExp的$1–$99</li>
 <li><p>重新赋值上RegExp.$1–$99</p>
-<blockquote>
-<p>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法<br>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量<br>多会影响全局的<code>RegExp.$1--$99</code>的值  </p>
-</blockquote>
-<h5 id="如下"><a href="#如下" class="headerlink" title="如下"></a>如下</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"> <span class="keyword">var</span> str = <span class="string">"明明不喜欢静静，还要明白的告诉他喜欢静静，自己安静安静"</span>;</div><div class="line"> <span class="function"><span class="keyword">function</span> <span class="title">testMatch</span>(<span class="params"></span>)</span>&#123;           <span class="comment">//测试sting.match()函数</span></div><div class="line">      <span class="keyword">var</span> m = str.match(<span class="string">"([明静])(.&#123;1&#125;)"</span>);</div><div class="line">      log(m);                    </div><div class="line">      <span class="comment">// ["明明", "明", "明", index: 0, input: "明明不喜欢静静，还要明白的告诉他喜欢静静，自己安安静"]</span></div><div class="line"> &#125;</div><div class="line"> test2();</div><div class="line">log(<span class="string">"g"</span>,<span class="built_in">RegExp</span>.$<span class="number">1</span>,<span class="built_in">RegExp</span>.$<span class="number">2</span>); <span class="comment">//明,明</span></div></pre></td></tr></table></figure>
+<ul>
+<li>也就是说 <code>string.match(&quot;($1)($2)($3)&quot;),string.search()...</code>上述四个字符串方法 </li>
+<li>以及<code>new RegExp()对象</code>，和 <code>reg=/($1)($2)($3)/</code>正则直接量</li>
+<li>多会影响全局的<code>RegExp.$1--$99</code>的值
       
     </div>
 
